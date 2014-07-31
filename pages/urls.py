@@ -1,6 +1,10 @@
 '''Url mapping for pages
 '''
-from django.conf.urls.defaults import patterns, url
+try:  # Older django versions
+    from django.conf.urls.defaults import patterns, url
+except:  # Newer django versions
+    from django.conf.urls import patterns, url
+
 from . import views
 
 urlpatterns = patterns('',
