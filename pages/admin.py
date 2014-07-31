@@ -5,7 +5,10 @@ import urlparse
 
 from django import http
 from django.conf import settings
-from django.conf.urls import defaults as urls
+try:
+    from django.conf.urls import defaults as urls
+except:
+    from django.conf import urls
 from django.contrib import admin
 from django.core import exceptions, urlresolvers
 from django.db import transaction
